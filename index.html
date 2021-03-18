@@ -1,18 +1,435 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.content {
+  padding: 5px;
+  font-size: 18px;
+  
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
+
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top:  320px;
+  left: 0;
+  background-color: #304965;
+  overflow-x: hidden;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 220px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  height: 100%
+  top:  320px;
+  
+  
+  
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+
+
+/* Some media queries for responsiveness */
+ @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+ @media screen and (max-width: 700px) {
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidenav a {float: left;}
+  div.main {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidenav a {
+    text-align: center;
+    float: none;
+  }
+}  
+
+
+
+</style>
+
+
+
+
+
+</head>
 <body>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+<div class="header" style="background-color:#304965" >
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+  <h2 style="color:white;">CSE T POINT</h2>
+  <p style="color:white;">Scroll down to see the sticky effect.</p>
+</div>
+
+<div id="navbar">
+  <a class="active" href="javascript:void(0)">Home</a>
+  <a href="javascript:void(0)">News</a>
+  <a href="javascript:void(0)">Contact</a>
+</div>
+<div class="content" >
+  
+<div>
+  <!-- <marquee>Standard marquee without attributes</marquee> -->
+  <marquee direction="right" speed="normal" behavior="loop" >
+      CSE-T-POINT 
+  </marquee>
+  <!-- <marquee behavior="alternate" direction="right" scrollamount="6">cseTpoint</marquee> -->
+
+  <!-- <marquee behavior="scroll" direction="right" scrollamount="1">Slow scroll speed</marquee>
+
+  <marquee behavior="scroll" direction="right" scrollamount="6">Scroll speed</marquee>
+
+  <marquee behavior="alternate" direction="right" scrollamount="6">Alternate scroll speed</marquee>
+
+  <marquee behavior="slide" direction="right" scrollamount="6">Slide scroll speed</marquee>
+
+  <marquee behavior="scroll" direction="left" scrollamount="10">Medium scroll speed</marquee>
+
+  <marquee behavior="scroll" direction="left" scrollamount="20">Fast scroll speed</marquee> -->
+</div>  
+
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+
+
+
+
+
+
+<div class="sidenav" style="height:500px;width:198px;border:solid 2px orange;overflow:scroll;overflow-x:hidden;overflow-y:scroll;" >
+<!-- <div class="sidenav" style="height:500px;width:198px;border:solid 2px orange;overflow:scroll;overflow-x:hidden;overflow-y:scroll;" > -->
+<!-- <div class="sidenav"> -->
+<!-- <div class="sidenav" style="height:530px;width:198px;border:solid 2px orange;overflow: auto;" > -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <button class="dropdown-btn">Languages 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+    
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+
+
+    <button class="dropdown-btn">Project 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+  <button class="dropdown-btn">C/C++ 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">JAVA 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">PYTHON 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">ANDROID 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">PHP/JS/SQL 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">ML 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+  <button class="dropdown-btn">Ai 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Project 1</a>
+    <a href="#">Project 2</a>
+    <a href="#">Project 3</a>
+  </div>
+    
+    <a href="#">Link 1</a>
+  </div>
+
+
+  <button class="dropdown-btn">CSE Subjects 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+
+
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+  <button class="dropdown-btn">CSE Subjects 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <a href="#contact">Search</a>
+
+
+
+ 
+</div>
+
+<div class="main" >
+  <h2>CSE T Point</h2>
+
+
+
+  
+
+
+
+
+  <!-- <P>"We are observing the situation regularly like we have done in the last one year. </p>
+  <P><P> We'll make decisions considering the health and other safety issues of our students, teachers, staff and guardians," </p>
+  <P>Education Minister Dipu Moni said yesterday. The minister was replying to a query from a reporter after a programme at the capital's International Mother Language Institute in the afternoon. </p>
+  <P>She said as per the existing schedule, secondary and higher secondary educational institutions are scheduled to reopen on March 30, universities on May 24 and student halls on May 17. </p>
+  <P>"Currently, it appears that there is a rising trend of Covid-19 infection… If the rising trend continues, </p>
+  <P>the government will reconsider its decision whether schools will reopen on March 30 or it will be changed on the basis of our observation and consultation with the National </p>
+  <P>Technical Advisory Committee," said Dipu Moni. "If there is any change [in the date], we will inform you on time,</p>
+
+  <P> The government will reconsider its decision to reopen educational institutions on March 30 if the Covid-19 infection rate keeps rising in the country. </p>
+  <P>"We are observing the situation regularly like we have done in the last one year. </p>
+  <P><P> We'll make decisions considering the health and other safety issues of our students, teachers, staff and guardians," </p>
+  <P>Education Minister Dipu Moni said yesterday. The minister was replying to a query from a reporter after a programme at the capital's International Mother Language Institute in the afternoon. </p>
+  <P>She said as per the existing schedule, secondary and higher secondary educational institutions are scheduled to reopen on March 30, universities on May 24 and student halls on May 17. </p>
+  <P>"Currently, it appears that there is a rising trend of Covid-19 infection… If the rising trend continues, </p>
+  <P>the government will reconsider its decision whether schools will reopen on March 30 or it will be changed on the basis of our observation and consultation with the National </p>
+  <P>Technical Advisory Committee," said Dipu Moni. "If there is any change [in the date], we will inform you on time,</p>
+  <P>" she added. The country has been witnessing a rise in the number of new Covid-19 cases for a week. A total of 1,</p>
+  <P>066 new infections were recorded in 24 hours till 8:00am yesterday, the highest in a 24-hour period in two months. The total number of people infected now stands at 555,222, </p>
+ <P> <P>according to the Directorate General of Health Services. In the meantime, the health officials told the media that the UK variant of novel coronavirus, also known as N501Y.</p>
+  <P>V1, was found in Bangladesh in early January. Given the situation, </p>
+  <P>the question about reopening educational institutions has become pertinent. </p>
+ <P> Dipu Moni said there was a tendency among the people of not fully following the health safety guidelines because of the arrival of the Covid-19 vaccine.</p>
+  <P> "I hope everybody will be cautious and will strictly follow the health guidelines so that the infection rate doesn't go up.</p>
+  <P> " She said the prime minister herself reminded the people of the fact that the</p>
+  <P>  country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P> A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P>  institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. 
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P>  After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. 
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P>  As per the decision, in-person classes at all primary, secondary, 
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P>  and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public 
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P> country's first Covid-19 cases were detected in March last year and the virus spread rapidly in subsequent days. </p>A week after the first detection of Covid-19 cases, the government on March 17 last year closed all educational institutions aiming to contain the spread of the virus. The closure led to cancellation of exams and left academic calendars in disarray. After a year of closure, the government following an inter-ministerial meeting on February 27 announced that all schools and colleges would reopen on March 30. As per the decision, in-person classes at all primary, secondary, and higher secondary schools would resume in phases. On February 22, the government announced that in-person classes at all public and private universities would resume on May 24 after the Eid-ul-Fitr. All student dormitories of universities would reopen on May 17, it said. Academic activities of around four crore students are being hampered due to the pandemic. The government started TV education for primary and secondary students so that students could make up some of the losses. Authorities of many schools, colleges and universities also started online classes, but many students could not access those regularly due to the lack of digital devices and internet facilities. The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams, originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, Junior School Certificate and their equivalent exams due to the pandemic. Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   <P>  and private universities would resume on May 24 after the Eid-ul-Fitr. </p>
+  <P>   All student dormitories of universities would reopen on May 17, it said. </p>
+  <P>   Academic activities of around four crore students are being hampered due to the pandemic. </p>
+  <P>   The government started TV education for primary and secondary students so that students could make up some of the losses.</p>
+  <P>    Authorities of many schools, colleges and universities also started online classes, </p>
+  <P>    but many students could not access those regularly due to the lack of digital devices and internet facilities. </p>
+  <P>    The pandemic led to the cancellation of the Higher Secondary Certificate and equivalent exams,</p>
+  <P>     originally slated for April 1, 2020. The government also cancelled last year's Primary Education Completion, </p>
+  <P>     Junior School Certificate and their equivalent exams due to the pandemic. </p>
+  <P>     Primary and secondary students were promoted to the next grade this year without any annual examinations. </P>
+   -->
+  
+</div>
+
+
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
